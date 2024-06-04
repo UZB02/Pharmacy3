@@ -107,7 +107,7 @@ const login = async () => {
     loading.value = true // Ishni boshlashni belgilash
     error.value = ''
 
-    const response = await axios.post('http://pharm-api.kdevs.uz/api/login', {
+    const response = await axios.post('https://pharmacy.educlub.uz/api/login', {
       username: username.value,
       password: password.value
     })

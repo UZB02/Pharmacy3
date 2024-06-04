@@ -302,7 +302,7 @@ console.log(modal)
 
 function fetchData() {
   axios
-    .get('http://pharm-api.kdevs.uz/api/categories', {
+    .get('https://pharmacy.educlub.uz/api/categories', {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
@@ -315,11 +315,10 @@ const addNewCategory = event => {
   event.preventDefault()
   if (InputValue.value == '') {
     document.querySelector('#addInput').style.border = '2px inset red'
-    // document.querySelector('#errorSpan').textContent = $t('error_input')
   } else {
     axios
       .post(
-        'http://pharm-api.kdevs.uz/api/categories',
+        'https://pharmacy.educlub.uz/api/categories',
         { name: InputValue.value },
         {
           headers: {
@@ -331,7 +330,6 @@ const addNewCategory = event => {
         if (res.status == 200) {
           document.querySelector('#end_modal').click()
           document.querySelector('#addInput').style.border = ''
-          document.querySelector('#errorSpan').textContent = ''
           Swal.fire({
             position: 'top-center',
             icon: 'success',
@@ -339,6 +337,7 @@ const addNewCategory = event => {
             showConfirmButton: false,
             timer: 1500
           })
+          console.log(InputValue.value);
           fetchData()
         }
       })
@@ -348,7 +347,7 @@ const addNewCategory = event => {
 }
 const deletCategory = () => {
   axios
-    .delete(`http://pharm-api.kdevs.uz/api/categories/${selectedId.value}`, {
+    .delete(`https://pharmacy.educlub.uz/api/categories/${selectedId.value}`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
@@ -381,7 +380,7 @@ function searchData() {
 
   if (searchKeyword.value.length > 2) {
     axios
-      .get('http://pharm-api.kdevs.uz/api/categories', {
+      .get('https://pharmacy.educlub.uz/api/categories', {
         headers: {
           Authorization: 'Bearer ' + token
         },
@@ -399,7 +398,7 @@ function searchData() {
 const editCategory = e => {
   axios
     .put(
-      `http://pharm-api.kdevs.uz/api/categories/${eId.value}`,
+      `https://pharmacy.educlub.uz/api/categories/${eId.value}`,
       {
         name: e
       },
