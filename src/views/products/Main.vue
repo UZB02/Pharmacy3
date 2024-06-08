@@ -529,9 +529,9 @@
           </thead>
           <tbody>
             <tr
-              v-for="(faker, fakerKey) in data.value"
+              v-for="(faker, fakerKey) in data"
               :key="fakerKey"
-              class="intro-x"
+              :class="faker ? `intro-x` : `hidden`"
             >
               <td class="w-20">
                 <div class="flex  justify-center">
@@ -611,7 +611,7 @@
       <!-- END: Data List -->
       <!-- BEGIN: Pagination -->
       <div
-        class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center"
+        :class="data ? `intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center` : `bg-primary-3`"
       >
         <ul class="pagination">
           <li>
@@ -711,7 +711,7 @@ import axios from 'axios'
 import { reactive, ref } from 'vue'
 import Swal from 'sweetalert2'
 import router from '@/router'
-const data = reactive({})
+const data = ref({})
 const currentPage = ref(1)
 const totalPages = ref(10)
 const modal = ref(false)
@@ -720,19 +720,21 @@ const EditModalOpend = ref(false)
 const eId = ref(null)
 const searchKeyword = ref('')
 const categories = ref({})
-const typeInputValue = reactive({
-  name: null,
-  package_type: null,
-  type: null,
-  barcode: null,
-  price: null,
-  initial_price: null,
-  amount: null,
-  expired_date: null,
-  manufactured_date: null,
-  manufacturer: null,
-  category_id: null
+const typeInputValue = ref({
+  name: "",
+  package_type: "",
+  type: "",
+  barcode: "",
+  price: "",
+  initial_price: "",
+  amount: "",
+  expired_date: "",
+  manufactured_date: "",
+  manufacturer: "",
+  category_id: ""
 })
+console.log(typeInputValue.value.manufactured_date);
+
 const errorInputValue = reactive({
   name: null,
   amount: null,
@@ -779,7 +781,7 @@ function modalEdit(faker) {
 
 const deletProducts = () => {
   axios
-    .delete(`http://pharm-api.kdevs.uz/api/products/${selectedId.value}`, {
+    .delete(`https://pharmacy.educlub.uz/api/products/${selectedId.value}`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
@@ -796,7 +798,7 @@ const deletProducts = () => {
         })
         document.querySelector('#cancelModal').click()
         axios
-          .get('http://pharm-api.kdevs.uz/api/products', {
+          .get('https://pharmacy.educlub.uz/api/products', {
             headers: {
               Authorization: 'Bearer ' + localStorage.getItem('token')
             },
@@ -817,9 +819,10 @@ const deletProducts = () => {
 }
 
 const addNewProducts = () => {
+  console.log(typeInputValue.value);
   loading.value = true // Ishni boshlashni belgilash
   axios
-    .post('http://pharm-api.kdevs.uz/api/products', typeInputValue, {
+    .post('https://pharmacy.educlub.uz/api/products', typeInputValue.value, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
@@ -837,24 +840,7 @@ const addNewProducts = () => {
         showConfirmButton: false,
         timer: 1500
       })
-      axios
-        .get('http://pharm-api.kdevs.uz/api/products', {
-          headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('token')
-          },
-          params: {
-            page: currentPage.value
-          }
-        })
-        .then(res => {
-          loading.value = false
-          console.log(res.data.result.data)
-          data.value = res.data.result?.data
-          totalPages.value = res.data.result?.last_page
-          if (data.value == '') {
-            totalPages.value = res.data.result?.currentPage
-          }
-        })
+      fetchData()
     })
     .catch(err => {
       errorInputValue.name = err.response.data.errors.name[0]
@@ -883,7 +869,7 @@ const editProducts = () => {
   loading.value = true
   axios
     .put(
-      `http://pharm-api.kdevs.uz/api/products/${eId.value}`,
+      `https://pharmacy.educlub.uz/api/products/${eId.value}`,
       {
         name: editInputValue.name,
         package_type: editInputValue.package_type,
@@ -914,7 +900,7 @@ const editProducts = () => {
         timer: 1500
       })
       axios
-        .get('http://pharm-api.kdevs.uz/api/products', {
+        .get('https://pharmacy.educlub.uz/api/products', {
           headers: {
             Authorization: 'Bearer ' + localStorage.getItem('token')
           },
@@ -944,7 +930,7 @@ function searchData() {
 
   if (!searchKeyword.value) {
     axios
-      .get('http://pharm-api.kdevs.uz/api/products', {
+      .get('https://pharmacy.educlub.uz/api/products', {
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         },
@@ -964,7 +950,7 @@ function searchData() {
 
   if (searchKeyword.value.length > 2) {
     axios
-      .get('http://pharm-api.kdevs.uz/api/products', {
+      .get('https://pharmacy.educlub.uz/api/products', {
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         },
@@ -980,8 +966,9 @@ function searchData() {
   }
 }
 
-axios
-  .get('http://pharm-api.kdevs.uz/api/products', {
+function fetchData() {
+  axios
+  .get('https://pharmacy.educlub.uz/api/products', {
     headers: {
       Authorization: 'Bearer ' + localStorage.getItem('token')
     },
@@ -991,13 +978,17 @@ axios
   })
   .then(res => {
     data.value = res.data.result?.data
+    console.log(res.data.result?.data);
     totalPages.value = res.data.result?.last_page
     if (data.value == '') {
       totalPages.value = res.data.result?.currentPage
     }
   })
+}
+fetchData()
+  
 axios
-  .get('http://pharm-api.kdevs.uz/api/categories', {
+  .get('https://pharmacy.educlub.uz/api/categories', {
     headers: {
       Authorization: 'Bearer ' + localStorage.getItem('token')
     }
@@ -1012,7 +1003,7 @@ const goToPage = page => {
     totalPages.value = res.data.result?.data
     currentPage.value = page
     axios
-      .get('http://pharm-api.kdevs.uz/api/products', {
+      .get('https://pharmacy.educlub.uz/api/products', {
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         },

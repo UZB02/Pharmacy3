@@ -13,7 +13,7 @@
               <RefreshCcwIcon class="w-4 h-4 mr-3" /> Reload Data
             </a>
           </div>
-          <div class="grid grid-cols-12 gap-6 mt-5">
+          <div class="grid grid-cols-9 gap-6 mt-5">
             <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
               <div class="report-box zoom-in">
                 <div class="box p-5">
@@ -74,7 +74,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+            <!-- <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
               <div class="report-box zoom-in">
                 <div class="box p-5">
                   <div class="flex">
@@ -93,7 +93,7 @@
                   <div class="text-base text-gray-600 mt-1">Unique Visitor</div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- END: General Report -->
@@ -229,7 +229,7 @@
               </div>
               <div class="flex items-center mt-4">
                 <div class="w-2 h-2 bg-theme-12 rounded-full mr-3"></div>
-                <span class="truncate">>= 50 Years old</span>
+                <span class="truncate">50 Years old</span>
                 <div
                   class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"
                 ></div>
@@ -268,7 +268,7 @@
               </div>
               <div class="flex items-center mt-4">
                 <div class="w-2 h-2 bg-theme-12 rounded-full mr-3"></div>
-                <span class="truncate">>= 50 Years old</span>
+                <span class="truncate">50 Years old</span>
                 <div
                   class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"
                 ></div>
@@ -323,7 +323,7 @@
                 >
                   <img
                     alt="Icewall Tailwind HTML Admin Template"
-                    :src="require(`@/assets/images/${faker.photos[0]}`).default"
+                    src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13"
                   />
                 </div>
                 <div class="ml-4 mr-auto">
@@ -464,9 +464,7 @@
                           tag="img"
                           alt="Icewall Tailwind HTML Admin Template"
                           class="rounded-full"
-                          :src="
-                            require(`@/assets/images/${faker.images[0]}`)
-                              .default
+                          src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
                           "
                           :content="`Uploaded at ${faker.dates[0]}`"
                         />
@@ -476,9 +474,7 @@
                           tag="img"
                           alt="Icewall Tailwind HTML Admin Template"
                           class="rounded-full"
-                          :src="
-                            require(`@/assets/images/${faker.images[1]}`)
-                              .default
+                        src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
                           "
                           :content="`Uploaded at ${faker.dates[1]}`"
                         />
@@ -488,9 +484,7 @@
                           tag="img"
                           alt="Icewall Tailwind HTML Admin Template"
                           class="rounded-full"
-                          :src="
-                            require(`@/assets/images/${faker.images[2]}`)
-                              .default
+                          src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
                           "
                           :content="`Uploaded at ${faker.dates[2]}`"
                         />
@@ -608,9 +602,8 @@
                   >
                     <img
                       alt="Icewall Tailwind HTML Admin Template"
-                      :src="
-                        require(`@/assets/images/${faker.photos[0]}`).default
-                      "
+                      src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
+                          "
                     />
                   </div>
                   <div class="ml-4 mr-auto">
@@ -661,9 +654,8 @@
                   >
                     <img
                       alt="Icewall Tailwind HTML Admin Template"
-                      :src="
-                        require(`@/assets/images/${$f()[9].photos[0]}`).default
-                      "
+                     src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
+                          "
                     />
                   </div>
                 </div>
@@ -684,9 +676,8 @@
                   >
                     <img
                       alt="Icewall Tailwind HTML Admin Template"
-                      :src="
-                        require(`@/assets/images/${$f()[8].photos[0]}`).default
-                      "
+                     src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
+                          "
                     />
                   </div>
                 </div>
@@ -708,9 +699,7 @@
                         <img
                           alt="Icewall Tailwind HTML Admin Template"
                           class="rounded-md border border-white"
-                          :src="
-                            require(`@/assets/images/${$f()[8].images[0]}`)
-                              .default
+                         src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
                           "
                         />
                       </Tippy>
@@ -722,9 +711,7 @@
                         <img
                           alt="Icewall Tailwind HTML Admin Template"
                           class="rounded-md border border-white"
-                          :src="
-                            require(`@/assets/images/${$f()[8].images[1]}`)
-                              .default
+                        src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
                           "
                         />
                       </Tippy>
@@ -736,9 +723,7 @@
                         <img
                           alt="Icewall Tailwind HTML Admin Template"
                           class="rounded-md border border-white"
-                          :src="
-                            require(`@/assets/images/${$f()[8].images[2]}`)
-                              .default
+                         src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
                           "
                         />
                       </Tippy>
@@ -756,9 +741,8 @@
                   >
                     <img
                       alt="Icewall Tailwind HTML Admin Template"
-                      :src="
-                        require(`@/assets/images/${$f()[7].photos[0]}`).default
-                      "
+                    src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
+                          "
                     />
                   </div>
                 </div>
@@ -785,9 +769,8 @@
                   >
                     <img
                       alt="Icewall Tailwind HTML Admin Template"
-                      :src="
-                        require(`@/assets/images/${$f()[6].photos[0]}`).default
-                      "
+                    src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
+                          "
                     />
                   </div>
                 </div>

@@ -1,3 +1,4 @@
+/*eslint-disable */
 const state = () => {
   return {
     menu: [
@@ -11,16 +12,16 @@ const state = () => {
             pageName: 'side-menu-dashboard-overview-1',
             title: 'overview_1'
           },
-          {
-            icon: '',
-            pageName: 'side-menu-dashboard-overview-2',
-            title: 'overview_2'
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-dashboard-overview-3',
-            title: 'overview_3'
-          }
+          // {
+          //   icon: '',
+          //   pageName: 'side-menu-dashboard-overview-2',
+          //   title: 'overview_2'
+          // },
+          // {
+          //   icon: '',
+          //   pageName: 'side-menu-dashboard-overview-3',
+          //   title: 'overview_3'
+          // }
         ]
       },
       {
