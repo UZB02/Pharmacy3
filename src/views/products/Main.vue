@@ -611,7 +611,11 @@
       <!-- END: Data List -->
       <!-- BEGIN: Pagination -->
       <div
-        :class="data ? `intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center` : `bg-primary-3`"
+        :class="
+          data
+            ? `intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center`
+            : `bg-primary-3`
+        "
       >
         <ul class="pagination">
           <li>
@@ -721,19 +725,19 @@ const eId = ref(null)
 const searchKeyword = ref('')
 const categories = ref({})
 const typeInputValue = ref({
-  name: "",
-  package_type: "",
-  type: "",
-  barcode: "",
-  price: "",
-  initial_price: "",
-  amount: "",
-  expired_date: "",
-  manufactured_date: "",
-  manufacturer: "",
-  category_id: ""
+  name: '',
+  package_type: '',
+  type: '',
+  barcode: '',
+  price: '',
+  initial_price: '',
+  amount: '',
+  expired_date: '',
+  manufactured_date: '',
+  manufacturer: '',
+  category_id: ''
 })
-console.log(typeInputValue.value.manufactured_date);
+console.log(typeInputValue.value.manufactured_date)
 
 const errorInputValue = reactive({
   name: null,
@@ -819,10 +823,10 @@ const deletProducts = () => {
 }
 
 const addNewProducts = () => {
-  console.log(typeInputValue.value);
+  console.log(typeInputValue.value)
   loading.value = true // Ishni boshlashni belgilash
   axios
-    .post('https://pharmacy.educlub.uz/api/products', typeInputValue.value, {
+    .post('http://pharmacy.educlub.uz/api/products', typeInputValue.value, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
@@ -968,25 +972,25 @@ function searchData() {
 
 function fetchData() {
   axios
-  .get('https://pharmacy.educlub.uz/api/products', {
-    headers: {
-      Authorization: 'Bearer ' + localStorage.getItem('token')
-    },
-    params: {
-      page: currentPage.value
-    }
-  })
-  .then(res => {
-    data.value = res.data.result?.data
-    console.log(res.data.result?.data);
-    totalPages.value = res.data.result?.last_page
-    if (data.value == '') {
-      totalPages.value = res.data.result?.currentPage
-    }
-  })
+    .get('https://pharmacy.educlub.uz/api/products', {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('token')
+      },
+      params: {
+        page: currentPage.value
+      }
+    })
+    .then(res => {
+      data.value = res.data.result?.data
+      console.log(res.data.result?.data)
+      totalPages.value = res.data.result?.last_page
+      if (data.value == '') {
+        totalPages.value = res.data.result?.currentPage
+      }
+    })
 }
 fetchData()
-  
+
 axios
   .get('https://pharmacy.educlub.uz/api/categories', {
     headers: {

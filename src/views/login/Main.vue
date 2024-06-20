@@ -114,7 +114,7 @@ const login = async () => {
     const token = response.data.result.token // Tokenni olish
     localStorage.setItem('token', token)
     // Yana navigatsiyaga o'tish uchun
-    router.push('/dashboard-overview-2')
+    router.push('/dashboard-overview-1')
   } catch (err) {
     console.log(err.response.data.errors.message)
     // Xato bo'lganda xatni saqlash
