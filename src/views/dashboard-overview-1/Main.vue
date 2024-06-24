@@ -6,12 +6,12 @@
         <!-- BEGIN: General Report -->
         <div class="col-span-12 mt-8">
           <div class="intro-y flex items-center h-10">
-            <h2 class="text-lg font-medium truncate mr-5">General Report</h2>
+            <h2 class="text-lg font-medium truncate mr-5">{{ $t("general_report") }}</h2>
             <a
               href=""
               class="ml-auto flex items-center text-theme-1 dark:text-theme-10"
             >
-              <RefreshCcwIcon class="w-4 h-4 mr-3" /> Reload Data
+              <RefreshCcwIcon class="w-4 h-4 mr-3" /> {{ $t("reload_data") }}
             </a>
           </div>
           <div class="grid grid-cols-9 gap-6 mt-5">
@@ -31,7 +31,7 @@
                     </div>
                   </div>
                   <div class="text-3xl font-medium leading-8 mt-6">4.710</div>
-                  <div class="text-base text-gray-600 mt-1">Item Sales</div>
+                  <div class="text-base text-gray-600 mt-1">{{ $t('item_sales') }}</div>
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@
                     </div>
                   </div>
                   <div class="text-3xl font-medium leading-8 mt-6">3.721</div>
-                  <div class="text-base text-gray-600 mt-1">New Orders</div>
+                  <div class="text-base text-gray-600 mt-1">{{ $t('new_orders') }}</div>
                 </div>
               </div>
             </div>
@@ -71,7 +71,7 @@
                     </div>
                   </div>
                   <div class="text-3xl font-medium leading-8 mt-6">2.149</div>
-                  <div class="text-base text-gray-600 mt-1">Total Products</div>
+                  <div class="text-base text-gray-600 mt-1">{{ $t("total_products") }}</div>
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@
         <!-- BEGIN: Sales Report -->
         <div class="col-span-12 lg:col-span-12 mt-8">
           <div class="intro-y block sm:flex items-center h-10">
-            <h2 class="text-lg font-medium truncate mr-5">Sales Report</h2>
+            <h2 class="text-lg font-medium truncate mr-5">{{ $t('sales_report') }}</h2>
             <div
               class="sm:ml-auto mt-3 sm:mt-0 relative text-gray-700 dark:text-gray-300"
             >
@@ -137,7 +137,7 @@
                     $15,000
                   </div>
                   <div class="mt-0.5 text-gray-600 dark:text-gray-600">
-                    This Month
+                    {{ $t('this_month') }}
                   </div>
                 </div>
                 <div
@@ -150,7 +150,7 @@
                     $10,000
                   </div>
                   <div class="mt-0.5 text-gray-600 dark:text-gray-600">
-                    Last Month
+                    {{ $t('last_month') }}
                   </div>
                 </div>
               </div>
@@ -159,37 +159,15 @@
                   class="dropdown-toggle btn btn-outline-secondary font-normal"
                   aria-expanded="false"
                 >
-                  Filter by Category
+                  {{ $t('filter_category') }}
                   <ChevronDownIcon class="w-4 h-4 ml-2" />
                 </button>
                 <div class="dropdown-menu w-40">
-                  <div
-                    class="dropdown-menu__content box dark:bg-dark-1 p-2 overflow-y-auto h-32"
-                  >
+                  <div v-for="(item,itemKey) in category" :key="itemKey">
                     <a
                       href=""
                       class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"
-                      >PC & Laptop</a
-                    >
-                    <a
-                      href=""
-                      class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"
-                      >Smartphone</a
-                    >
-                    <a
-                      href=""
-                      class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"
-                      >Electronic</a
-                    >
-                    <a
-                      href=""
-                      class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"
-                      >Photography</a
-                    >
-                    <a
-                      href=""
-                      class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"
-                      >Sport</a
+                      >{{ item.name }}</a
                     >
                   </div>
                 </div>
@@ -204,7 +182,7 @@
         <!-- BEGIN: Official Store -->
         <div class="col-span-12 xl:col-span-12 mt-6">
           <div class="intro-y block sm:flex items-center h-10">
-            <h2 class="text-lg font-medium truncate mr-5">Official Store</h2>
+            <h2 class="text-lg font-medium truncate mr-5">{{ $t('location') }}</h2>
             <div
               class="sm:ml-auto mt-3 sm:mt-0 relative text-gray-700 dark:text-gray-300"
             >
@@ -214,14 +192,13 @@
               <input
                 type="text"
                 class="form-control sm:w-40 box pl-10"
-                placeholder="Filter by city"
+                :placeholder="$t('filter_by_city')"
               />
             </div>
           </div>
           <div class="intro-y box p-5 mt-12 sm:mt-5">
             <div>
-              250 Official stores in 21 countries, click the marker to see
-              location details.
+              {{ $t('pharmacy_info') }}
             </div>
             <ReportMap class="report-maps mt-5 bg-gray-200 rounded-md" />
           </div>
@@ -235,20 +212,20 @@
         <div class="col-span-12 mt-6">
           <div class="intro-y block sm:flex items-center h-10">
             <h2 class="text-lg font-medium truncate mr-5">
-              Weekly Top Products
+              {{ $t('weekly_top_products') }}
             </h2>
             <div class="flex items-center sm:ml-auto mt-3 sm:mt-0">
               <button
                 class="btn box flex items-center text-gray-700 dark:text-gray-300"
               >
                 <FileTextIcon class="hidden sm:block w-4 h-4 mr-2" />
-                Export to Excel
+                {{ $t('export_to_excel') }}
               </button>
               <button
                 class="ml-3 btn box flex items-center text-gray-700 dark:text-gray-300"
               >
                 <FileTextIcon class="hidden sm:block w-4 h-4 mr-2" />
-                Export to PDF
+                {{ $t('export_to_PDF') }}
               </button>
             </div>
           </div>
@@ -256,11 +233,11 @@
             <table class="table table-report sm:mt-2">
               <thead>
                 <tr>
-                  <th class="whitespace-nowrap">IMAGES</th>
-                  <th class="whitespace-nowrap">PRODUCT NAME</th>
-                  <th class="text-center whitespace-nowrap">STOCK</th>
-                  <th class="text-center whitespace-nowrap">STATUS</th>
-                  <th class="text-center whitespace-nowrap">ACTIONS</th>
+                  <th class="whitespace-nowrap">{{ $t('images') }}</th>
+                  <th class="whitespace-nowrap">{{ $t('product_name') }}</th>
+                  <th class="text-center whitespace-nowrap">{{ $t('stock') }}</th>
+                  <th class="text-center whitespace-nowrap">{{ $t('status') }}</th>
+                  <th class="text-center whitespace-nowrap">{{ $t('actions') }}</th>
                 </tr>
               </thead>
               <tbody>
@@ -328,10 +305,10 @@
                     <div class="flex justify-center items-center">
                       <a class="flex items-center mr-3" href="">
                         <CheckSquareIcon class="w-4 h-4 mr-1" />
-                        Edit
+                        {{ $t('edit') }}
                       </a>
                       <a class="flex items-center text-theme-6" href="">
-                        <Trash2Icon class="w-4 h-4 mr-1" /> Delete
+                        <Trash2Icon class="w-4 h-4 mr-1" /> {{ $t('delete') }}
                       </a>
                     </div>
                   </td>
@@ -399,7 +376,7 @@
         <div class="col-span-12 w-full xl:col-span-12 mt-6">
           <div class="intro-y flex items-center h-10">
             <h2 class="text-lg font-medium truncate">
-              Weekly Best Sellers
+              {{ $t('weekly_best_sellers') }}
             </h2>
           </div>
           <div class="mt-5 w-full">
@@ -433,7 +410,7 @@
             <a
               href=""
               class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600"
-              >View More</a
+              >{{ $t('view_more') }}</a
             >
           </div>
         </div>
@@ -443,12 +420,12 @@
             class="col-span-12 md:col-span-6 xl:col-span-4 2xl:col-span-12 xl:col-start-1 xl:row-start-2 2xl:col-start-auto 2xl:row-start-auto mt-3"
           >
             <div class="intro-x flex items-center h-10">
-              <h2 class="text-lg font-medium truncate mr-5">Schedules</h2>
+              <h2 class="text-lg font-medium truncate mr-5">{{ $t('schedules') }}</h2>
               <a
                 href=""
                 class="ml-auto text-theme-1 dark:text-theme-10 truncate flex items-center"
               >
-                <PlusIcon class="w-4 h-4 mr-1" /> Add New Schedules
+                <PlusIcon class="w-4 h-4 mr-1" />{{ $t('add_new_schedules') }}
               </a>
             </div>
             <div class="mt-5">
@@ -578,8 +555,7 @@ import ReportLineChart from '@/components/report-line-chart/Main.vue'
 import ReportDonutChart from '@/components/report-donut-chart/Main.vue'
 import ReportPieChart from '@/components/report-pie-chart/Main.vue'
 import ReportMap from '@/components/report-map/Main.vue'
-// import ReportDonutChart1 from '@/components/report-donut-chart-1/Main.vue'
-// import SimpleLineChart1 from '@/components/simple-line-chart-1/Main.vue'
+import axios from 'axios'
 
 export default defineComponent({
   components: {
@@ -593,6 +569,7 @@ export default defineComponent({
   setup() {
     const salesReportFilter = ref()
     const importantNotesRef = ref()
+    const category=ref({})
 
     provide('bind[importantNotesRef]', el => {
       importantNotesRef.value = el
@@ -606,11 +583,22 @@ export default defineComponent({
       const el = importantNotesRef.value
       el.tns.goTo('next')
     }
-
+    axios
+  .get('https://pharmacy.educlub.uz/api/categories', {
+    headers: {
+      Authorization: 'Bearer ' + localStorage.getItem('token')
+    }
+  })
+  .then(res => {
+    category.value = res.data.result
+    console.log(res.data.result)
+  })
+   
     return {
       salesReportFilter,
       prevImportantNotes,
-      nextImportantNotes
+      nextImportantNotes,
+      category,
     }
   }
 })
