@@ -283,98 +283,98 @@ const state = () => {
       //     }
       //   ]
       // },
-      'devider',
-      {
-        icon: 'InboxIcon',
-        pageName: 'side-menu-components',
-        title: 'Components',
-        subMenu: [
-          {
-            icon: '',
-            pageName: 'side-menu-table',
-            title: 'Table',
-            subMenu: [
-              {
-                icon: '',
-                pageName: 'side-menu-regular-table',
-                title: 'Regular Table'
-              },
-              {
-                icon: '',
-                pageName: 'side-menu-tabulator',
-                title: 'Tabulator'
-              }
-            ]
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-overlay',
-            title: 'Overlay',
-            subMenu: [
-              {
-                icon: '',
-                pageName: 'side-menu-modal',
-                title: 'Modal'
-              },
-              {
-                icon: '',
-                pageName: 'side-menu-slide-over',
-                title: 'Slide Over'
-              },
-              {
-                icon: '',
-                pageName: 'side-menu-notification',
-                title: 'Notification'
-              }
-            ]
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-accordion',
-            title: 'Accordion'
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-button',
-            title: 'Button'
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-alert',
-            title: 'Alert'
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-progress-bar',
-            title: 'Progress Bar'
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-tooltip',
-            title: 'Tooltip'
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-dropdown',
-            title: 'Dropdown'
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-typography',
-            title: 'Typography'
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-icon',
-            title: 'Icon'
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-loading-icon',
-            title: 'Loading Icon'
-          }
-        ]
-      },
+      // 'devider',
+      // {
+      //   icon: 'InboxIcon',
+      //   pageName: 'side-menu-components',
+      //   title: 'Components',
+      //   subMenu: [
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-table',
+      //       title: 'Table',
+      //       subMenu: [
+      //         {
+      //           icon: '',
+      //           pageName: 'side-menu-regular-table',
+      //           title: 'Regular Table'
+      //         },
+      //         {
+      //           icon: '',
+      //           pageName: 'side-menu-tabulator',
+      //           title: 'Tabulator'
+      //         }
+      //       ]
+      //     },
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-overlay',
+      //       title: 'Overlay',
+      //       subMenu: [
+      //         {
+      //           icon: '',
+      //           pageName: 'side-menu-modal',
+      //           title: 'Modal'
+      //         },
+      //         {
+      //           icon: '',
+      //           pageName: 'side-menu-slide-over',
+      //           title: 'Slide Over'
+      //         },
+      //         {
+      //           icon: '',
+      //           pageName: 'side-menu-notification',
+      //           title: 'Notification'
+      //         }
+      //       ]
+      //     },
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-accordion',
+      //       title: 'Accordion'
+      //     },
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-button',
+      //       title: 'Button'
+      //     },
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-alert',
+      //       title: 'Alert'
+      //     },
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-progress-bar',
+      //       title: 'Progress Bar'
+      //     },
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-tooltip',
+      //       title: 'Tooltip'
+      //     },
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-dropdown',
+      //       title: 'Dropdown'
+      //     },
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-typography',
+      //       title: 'Typography'
+      //     },
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-icon',
+      //       title: 'Icon'
+      //     },
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-loading-icon',
+      //       title: 'Loading Icon'
+      //     }
+      //   ]
+      // },
       // {
       //   icon: 'SidebarIcon',
       //   pageName: 'side-menu-forms',
@@ -412,28 +412,28 @@ const state = () => {
       //     }
       //   ]
       // },
-      {
-        icon: 'HardDriveIcon',
-        pageName: 'side-menu-widgets',
-        title: 'Widgets',
-        subMenu: [
-          {
-            icon: '',
-            pageName: 'side-menu-chart',
-            title: 'Chart'
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-slider',
-            title: 'Slider'
-          },
-          {
-            icon: '',
-            pageName: 'side-menu-image-zoom',
-            title: 'Image Zoom'
-          }
-        ]
-      }
+      // {
+      //   icon: 'HardDriveIcon',
+      //   pageName: 'side-menu-widgets',
+      //   title: 'Widgets',
+      //   subMenu: [
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-chart',
+      //       title: 'Chart'
+      //     },
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-slider',
+      //       title: 'Slider'
+      //     },
+      //     {
+      //       icon: '',
+      //       pageName: 'side-menu-image-zoom',
+      //       title: 'Image Zoom'
+      //     }
+      //   ]
+      // }
     ]
   }
 }
