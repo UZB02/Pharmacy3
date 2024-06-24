@@ -11,7 +11,7 @@ const state = () => {
             icon: '',
             pageName: 'side-menu-dashboard-overview-1',
             title: 'overview_1'
-          },
+          }
           // {
           //   icon: '',
           //   pageName: 'side-menu-dashboard-overview-2',
@@ -26,13 +26,13 @@ const state = () => {
       },
       {
         icon: 'HardDriveIcon',
-        pageName: 'products',
-        title: 'products'
+        pageName: 'category',
+        title: 'category'
       },
       {
         icon: 'HardDriveIcon',
-        pageName: 'category',
-        title: 'category'
+        pageName: 'products',
+        title: 'products'
       },
       // {
       //   icon: 'BoxIcon',
@@ -89,7 +89,7 @@ const state = () => {
       //   pageName: 'side-menu-calendar',
       //   title: 'Calendar'
       // },
-      'devider',
+      'devider'
       // {
       //   icon: 'EditIcon',
       //   pageName: 'side-menu-crud',

@@ -736,7 +736,7 @@ const typeInputValue = ref({
   manufactured_date: '',
   manufacturer: '',
   category_id: '',
-  count:""
+  count: ''
 })
 console.log(typeInputValue.value.manufactured_date)
 
@@ -836,8 +836,20 @@ const addNewProducts = () => {
       document.querySelector('#add_close_modal').click()
       errorInputValue.name = ''
       errorInputValue.barcode = ''
-      errorInputValue.amount = ''
+      errorInputValue.count = ''
       errorInputValue.expired_date = ''
+        typeInputValue.name = null
+  typeInputValue.package_type = null
+  typeInputValue.type = null
+  typeInputValue.barcode = null
+  typeInputValue.price = null
+  typeInputValue.initial_price = null
+  typeInputValue.count = null
+  typeInputValue.expired_date = null
+  typeInputValue.manufactured_date = null
+  typeInputValue.manufacturer = null
+  typeInputValue.short_description = null
+  typeInputValue.category_id = null
       Swal.fire({
         position: 'top-center',
         icon: 'success',
@@ -850,24 +862,12 @@ const addNewProducts = () => {
     .catch(err => {
       errorInputValue.name = err.response.data.errors.name[0]
       errorInputValue.barcode = err.response.data.errors.barcode[0]
-      errorInputValue.amount = err.response.data.errors.amount[0]
+      errorInputValue.count = err.response.data.errors.count[0]
       errorInputValue.expired_date = err.response.data.errors.expired_date[0]
     })
     .finally(() => {
       loading.value = false
     })
-  typeInputValue.name = null
-  typeInputValue.package_type = null
-  typeInputValue.type = null
-  typeInputValue.barcode = null
-  typeInputValue.price = null
-  typeInputValue.initial_price = null
-  typeInputValue.amount = null
-  typeInputValue.expired_date = null
-  typeInputValue.manufactured_date = null
-  typeInputValue.manufacturer = null
-  typeInputValue.short_description = null
-  typeInputValue.category_id = null
 }
 
 const editProducts = () => {
