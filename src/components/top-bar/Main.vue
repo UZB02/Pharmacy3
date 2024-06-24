@@ -56,7 +56,7 @@
               <div class="ml-3">Transactions Report</div>
             </a>
           </div>
-          <div class="search-result__content__title">Users</div>
+          <!-- <div class="search-result__content__title">Users</div>
           <div class="mb-5">
             <a v-for="(faker, fakerKey) in $_.take($f(), 4)" :key="fakerKey" href class="flex items-center mt-2">
               <div class="w-8 h-8 image-fit">
@@ -68,7 +68,7 @@
                 {{ faker.users[0].email }}
               </div>
             </a>
-          </div>
+          </div> -->
           <div class="search-result__content__title">Products</div>
           <a v-for="(faker, fakerKey) in $_.take($f(), 4)" :key="fakerKey" href class="flex items-center mt-2">
             <div class="w-8 h-8 image-fit">
@@ -96,7 +96,7 @@
             class="cursor-pointer relative flex items-center" :class="{ 'mt-5': fakerKey }">
             <div class="w-12 h-12 flex-none image-fit mr-1">
               <img alt="Icewall Tailwind HTML Admin Template" class="rounded-full"
-                :src="require(`@/assets/images/${faker.photos[0]}`).default" />
+                src="https://avatars.mds.yandex.net/i?id=63e0f20ba6f13207e41e5809721f79e7571a89bb-9211188-images-thumbs&n=13" />
               <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
             </div>
             <div class="ml-2 overflow-hidden">
@@ -185,27 +185,12 @@ export default defineComponent({
       searchDropdown.value = false
     }
 
-    // const uzLang = () => { 
-    //   localStorage.setItem("lang", "UZ")
-    //   location.reload();
-    // }
-    // const enLang = () => { 
-    //   localStorage.setItem("lang", "EN")
-    //   location.reload();
-    // }
-    // const ruLang = () => { 
-    //   localStorage.setItem("lang", "RU")
-    //   location.reload();
-    // }
 
     return {
       searchDropdown,
       showSearchDropdown,
       hideSearchDropdown,
       loginpushpage,
-      // uzLang,
-      // enLang,
-      // ruLang
     }
   },
   data() {

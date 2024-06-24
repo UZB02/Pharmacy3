@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <div class="grid grid-cols-12 gap-6">
     <div class="col-span-12 2xl:col-span-9">
@@ -98,7 +99,7 @@
         </div>
         <!-- END: General Report -->
         <!-- BEGIN: Sales Report -->
-        <div class="col-span-12 lg:col-span-6 mt-8">
+        <div class="col-span-12 lg:col-span-12 mt-8">
           <div class="intro-y block sm:flex items-center h-10">
             <h2 class="text-lg font-medium truncate mr-5">Sales Report</h2>
             <div
@@ -200,86 +201,8 @@
           </div>
         </div>
         <!-- END: Sales Report -->
-        <!-- BEGIN: Weekly Top Seller -->
-        <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
-          <div class="intro-y flex items-center h-10">
-            <h2 class="text-lg font-medium truncate mr-5">Weekly Top Seller</h2>
-            <a href="" class="ml-auto text-theme-1 dark:text-theme-10 truncate"
-              >Show More</a
-            >
-          </div>
-          <div class="intro-y box p-5 mt-5">
-            <ReportPieChart :height="300" class="mt-3" />
-            <div class="mt-8">
-              <div class="flex items-center">
-                <div class="w-2 h-2 bg-theme-11 rounded-full mr-3"></div>
-                <span class="truncate">17 - 30 Years old</span>
-                <div
-                  class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"
-                ></div>
-                <span class="font-medium xl:ml-auto">62%</span>
-              </div>
-              <div class="flex items-center mt-4">
-                <div class="w-2 h-2 bg-theme-1 rounded-full mr-3"></div>
-                <span class="truncate">31 - 50 Years old</span>
-                <div
-                  class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"
-                ></div>
-                <span class="font-medium xl:ml-auto">33%</span>
-              </div>
-              <div class="flex items-center mt-4">
-                <div class="w-2 h-2 bg-theme-12 rounded-full mr-3"></div>
-                <span class="truncate">50 Years old</span>
-                <div
-                  class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"
-                ></div>
-                <span class="font-medium xl:ml-auto">10%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END: Weekly Top Seller -->
-        <!-- BEGIN: Sales Report -->
-        <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
-          <div class="intro-y flex items-center h-10">
-            <h2 class="text-lg font-medium truncate mr-5">Sales Report</h2>
-            <a href="" class="ml-auto text-theme-1 dark:text-theme-10 truncate"
-              >Show More</a
-            >
-          </div>
-          <div class="intro-y box p-5 mt-5">
-            <ReportDonutChart :height="300" class="mt-3" />
-            <div class="mt-8">
-              <div class="flex items-center">
-                <div class="w-2 h-2 bg-theme-11 rounded-full mr-3"></div>
-                <span class="truncate">17 - 30 Years old</span>
-                <div
-                  class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"
-                ></div>
-                <span class="font-medium xl:ml-auto">62%</span>
-              </div>
-              <div class="flex items-center mt-4">
-                <div class="w-2 h-2 bg-theme-1 rounded-full mr-3"></div>
-                <span class="truncate">31 - 50 Years old</span>
-                <div
-                  class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"
-                ></div>
-                <span class="font-medium xl:ml-auto">33%</span>
-              </div>
-              <div class="flex items-center mt-4">
-                <div class="w-2 h-2 bg-theme-12 rounded-full mr-3"></div>
-                <span class="truncate">50 Years old</span>
-                <div
-                  class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"
-                ></div>
-                <span class="font-medium xl:ml-auto">10%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END: Sales Report -->
         <!-- BEGIN: Official Store -->
-        <div class="col-span-12 xl:col-span-8 mt-6">
+        <div class="col-span-12 xl:col-span-12 mt-6">
           <div class="intro-y block sm:flex items-center h-10">
             <h2 class="text-lg font-medium truncate mr-5">Official Store</h2>
             <div
@@ -304,119 +227,8 @@
           </div>
         </div>
         <!-- END: Official Store -->
-        <!-- BEGIN: Weekly Best Sellers -->
-        <div class="col-span-12 xl:col-span-4 mt-6">
-          <div class="intro-y flex items-center h-10">
-            <h2 class="text-lg font-medium truncate mr-5">
-              Weekly Best Sellers
-            </h2>
-          </div>
-          <div class="mt-5">
-            <div
-              v-for="(faker, fakerKey) in $_.take($f(), 4)"
-              :key="fakerKey"
-              class="intro-y"
-            >
-              <div class="box px-4 py-4 mb-3 flex items-center zoom-in">
-                <div
-                  class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                >
-                  <img
-                    alt="Icewall Tailwind HTML Admin Template"
-                    src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13"
-                  />
-                </div>
-                <div class="ml-4 mr-auto">
-                  <div class="font-medium">{{ faker.users[0].name }}</div>
-                  <div class="text-gray-600 text-xs mt-0.5">
-                    {{ faker.dates[0] }}
-                  </div>
-                </div>
-                <div
-                  class="py-1 px-2 rounded-full text-xs bg-theme-9 text-white cursor-pointer font-medium"
-                >
-                  137 Sales
-                </div>
-              </div>
-            </div>
-            <a
-              href=""
-              class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600"
-              >View More</a
-            >
-          </div>
-        </div>
-        <!-- END: Weekly Best Sellers -->
         <!-- BEGIN: General Report -->
         <div class="col-span-12 grid grid-cols-12 gap-6 mt-8">
-          <div class="col-span-12 sm:col-span-6 2xl:col-span-3 intro-y">
-            <div class="box p-5 zoom-in">
-              <div class="flex items-center">
-                <div class="w-2/4 flex-none">
-                  <div class="text-lg font-medium truncate">Target Sales</div>
-                  <div class="text-gray-600 mt-1">300 Sales</div>
-                </div>
-                <div class="flex-none ml-auto relative">
-                  <ReportDonutChart1 :width="90" :height="90" />
-                  <div
-                    class="font-medium absolute w-full h-full flex items-center justify-center top-0 left-0"
-                  >
-                    20%
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-span-12 sm:col-span-6 2xl:col-span-3 intro-y">
-            <div class="box p-5 zoom-in">
-              <div class="flex">
-                <div class="text-lg font-medium truncate mr-3">
-                  Social Media
-                </div>
-                <div
-                  class="py-1 px-2 flex items-center rounded-full text-xs bg-gray-200 dark:bg-dark-5 text-gray-600 dark:text-gray-300 cursor-pointer ml-auto truncate"
-                >
-                  320 Followers
-                </div>
-              </div>
-              <div class="mt-4">
-                <SimpleLineChart1 :height="60" class="-ml-1" />
-              </div>
-            </div>
-          </div>
-          <div class="col-span-12 sm:col-span-6 2xl:col-span-3 intro-y">
-            <div class="box p-5 zoom-in">
-              <div class="flex items-center">
-                <div class="w-2/4 flex-none">
-                  <div class="text-lg font-medium truncate">New Products</div>
-                  <div class="text-gray-600 mt-1">1450 Products</div>
-                </div>
-                <div class="flex-none ml-auto relative">
-                  <ReportDonutChart1 :width="90" :height="90" />
-                  <div
-                    class="font-medium absolute w-full h-full flex items-center justify-center top-0 left-0"
-                  >
-                    45%
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-span-12 sm:col-span-6 2xl:col-span-3 intro-y">
-            <div class="box p-5 zoom-in">
-              <div class="flex">
-                <div class="text-lg font-medium truncate mr-3">Posted Ads</div>
-                <div
-                  class="py-1 px-2 flex items-center rounded-full text-xs bg-gray-200 dark:bg-dark-5 text-gray-600 dark:text-gray-300 cursor-pointer ml-auto truncate"
-                >
-                  180 Campaign
-                </div>
-              </div>
-              <div class="mt-4">
-                <SimpleLineChart1 :height="60" class="-ml-1" />
-              </div>
-            </div>
-          </div>
         </div>
         <!-- END: General Report -->
         <!-- BEGIN: Weekly Top Products -->
@@ -580,318 +392,52 @@
         <!-- END: Weekly Top Products -->
       </div>
     </div>
-    <div class="col-span-12 2xl:col-span-3">
-      <div class="2xl:border-l border-theme-5 -mb-10 pb-10">
-        <div class="2xl:pl-6 grid grid-cols-12 gap-6">
-          <!-- BEGIN: Transactions -->
-          <div
-            class="col-span-12 md:col-span-6 xl:col-span-4 2xl:col-span-12 mt-3 2xl:mt-8"
-          >
-            <div class="intro-x flex items-center h-10">
-              <h2 class="text-lg font-medium truncate mr-5">Transactions</h2>
-            </div>
-            <div class="mt-5">
-              <div
-                v-for="(faker, fakerKey) in $_.take($f(), 5)"
-                :key="fakerKey"
-                class="intro-x"
-              >
-                <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
-                  <div
-                    class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden"
-                  >
-                    <img
-                      alt="Icewall Tailwind HTML Admin Template"
-                      src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
-                          "
-                    />
-                  </div>
-                  <div class="ml-4 mr-auto">
-                    <div class="font-medium">
-                      {{ faker.users[0].name }}
-                    </div>
-                    <div class="text-gray-600 text-xs mt-0.5">
-                      {{ faker.dates[0] }}
-                    </div>
-                  </div>
-                  <div
-                    :class="{
-                      'text-theme-9': faker.trueFalse[0],
-                      'text-theme-6': !faker.trueFalse[0]
-                    }"
-                  >
-                    {{ faker.trueFalse[0] ? '+' : '-' }}${{ faker.totals[0] }}
-                  </div>
-                </div>
-              </div>
-              <a
-                href=""
-                class="intro-x w-full block text-center rounded-md py-3 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600"
-                >View More</a
-              >
-            </div>
+    <div class="w-full col-span-12 2xl:col-span-3">
+      <div class="2xl:border-l w-full border-theme-5 -mb-10 pb-10">
+        <div class="2xl:pl-6 w-full grid grid-cols-12 gap-6">
+            <!-- BEGIN: Weekly Best Sellers -->
+        <div class="col-span-12 w-full xl:col-span-12 mt-6">
+          <div class="intro-y flex items-center h-10">
+            <h2 class="text-lg font-medium truncate">
+              Weekly Best Sellers
+            </h2>
           </div>
-          <!-- END: Transactions -->
-          <!-- BEGIN: Recent Activities -->
-          <div
-            class="col-span-12 md:col-span-6 xl:col-span-4 2xl:col-span-12 mt-3"
-          >
-            <div class="intro-x flex items-center h-10">
-              <h2 class="text-lg font-medium truncate mr-5">
-                Recent Activities
-              </h2>
-              <a
-                href=""
-                class="ml-auto text-theme-1 dark:text-theme-10 truncate"
-                >Show More</a
-              >
-            </div>
-            <div class="report-timeline mt-5 relative">
-              <div class="intro-x relative flex items-center mb-3">
-                <div class="report-timeline__image">
-                  <div
-                    class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden"
-                  >
-                    <img
-                      alt="Icewall Tailwind HTML Admin Template"
-                     src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
-                          "
-                    />
+          <div class="mt-5 w-full">
+            <div
+              v-for="(faker, fakerKey) in $_.take($f(), 4)"
+              :key="fakerKey"
+              class="intro-y w-full"
+            >
+              <div class="box px-4 py-4 mb-3 flex w-full items-center zoom-in">
+                <div
+                  class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
+                >
+                  <img
+                    alt="Icewall Tailwind HTML Admin Template"
+                    src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13"
+                  />
+                </div>
+                <div class="ml-2 mr-auto">
+                  <div class="font-medium">{{ faker.users[0].name }}</div>
+                  <div class="text-gray-600 text-xs mt-0.5">
+                    {{ faker.dates[0] }}
                   </div>
                 </div>
-                <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
-                  <div class="flex items-center">
-                    <div class="font-medium">
-                      {{ $f()[9].users[0].name }}
-                    </div>
-                    <div class="text-xs text-gray-500 ml-auto">07:00 PM</div>
-                  </div>
-                  <div class="text-gray-600 mt-1">Has joined the team</div>
-                </div>
-              </div>
-              <div class="intro-x relative flex items-center mb-3">
-                <div class="report-timeline__image">
-                  <div
-                    class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden"
-                  >
-                    <img
-                      alt="Icewall Tailwind HTML Admin Template"
-                     src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
-                          "
-                    />
-                  </div>
-                </div>
-                <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
-                  <div class="flex items-center">
-                    <div class="font-medium">
-                      {{ $f()[8].users[0].name }}
-                    </div>
-                    <div class="text-xs text-gray-500 ml-auto">07:00 PM</div>
-                  </div>
-                  <div class="text-gray-600">
-                    <div class="mt-1">Added 3 new photos</div>
-                    <div class="flex mt-2">
-                      <Tippy
-                        tag="div"
-                        class="w-8 h-8 image-fit mr-1 zoom-in"
-                        :content="$f()[0].products[0].name"
-                      >
-                        <img
-                          alt="Icewall Tailwind HTML Admin Template"
-                          class="rounded-md border border-white"
-                         src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
-                          "
-                        />
-                      </Tippy>
-                      <Tippy
-                        tag="div"
-                        class="w-8 h-8 image-fit mr-1 zoom-in"
-                        :content="$f()[1].products[0].name"
-                      >
-                        <img
-                          alt="Icewall Tailwind HTML Admin Template"
-                          class="rounded-md border border-white"
-                        src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
-                          "
-                        />
-                      </Tippy>
-                      <Tippy
-                        tag="div"
-                        class="w-8 h-8 image-fit mr-1 zoom-in"
-                        :content="$f()[2].products[0].name"
-                      >
-                        <img
-                          alt="Icewall Tailwind HTML Admin Template"
-                          class="rounded-md border border-white"
-                         src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
-                          "
-                        />
-                      </Tippy>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="intro-x text-gray-500 text-xs text-center my-4">
-                12 November
-              </div>
-              <div class="intro-x relative flex items-center mb-3">
-                <div class="report-timeline__image">
-                  <div
-                    class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden"
-                  >
-                    <img
-                      alt="Icewall Tailwind HTML Admin Template"
-                    src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
-                          "
-                    />
-                  </div>
-                </div>
-                <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
-                  <div class="flex items-center">
-                    <div class="font-medium">
-                      {{ $f()[7].users[0].name }}
-                    </div>
-                    <div class="text-xs text-gray-500 ml-auto">07:00 PM</div>
-                  </div>
-                  <div class="text-gray-600 mt-1">
-                    Has changed
-                    <a class="text-theme-1 dark:text-theme-10" href="">{{
-                      $f()[7].products[0].name
-                    }}</a>
-                    price and description
-                  </div>
-                </div>
-              </div>
-              <div class="intro-x relative flex items-center mb-3">
-                <div class="report-timeline__image">
-                  <div
-                    class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden"
-                  >
-                    <img
-                      alt="Icewall Tailwind HTML Admin Template"
-                    src="https://avatars.mds.yandex.net/i?id=de33ac8a8e6d4e1813c6abe8675f7d272d4dab3f-12569767-images-thumbs&n=13
-                          "
-                    />
-                  </div>
-                </div>
-                <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
-                  <div class="flex items-center">
-                    <div class="font-medium">
-                      {{ $f()[6].users[0].name }}
-                    </div>
-                    <div class="text-xs text-gray-500 ml-auto">07:00 PM</div>
-                  </div>
-                  <div class="text-gray-600 mt-1">
-                    Has changed
-                    <a class="text-theme-1 dark:text-theme-10" href="">{{
-                      $f()[6].products[0].name
-                    }}</a>
-                    description
-                  </div>
+                <div
+                  class="py-1 px-2 flex items-center justify-center rounded-full text-xs bg-theme-9 text-white cursor-pointer font-medium"
+                >
+                  137 Sales
                 </div>
               </div>
             </div>
+            <a
+              href=""
+              class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600"
+              >View More</a
+            >
           </div>
-          <!-- END: Recent Activities -->
-          <!-- BEGIN: Important Notes -->
-          <div
-            class="col-span-12 md:col-span-6 xl:col-span-12 xl:col-start-1 xl:row-start-1 2xl:col-start-auto 2xl:row-start-auto mt-3"
-          >
-            <div class="intro-x flex items-center h-10">
-              <h2 class="text-lg font-medium truncate mr-auto">
-                Important Notes
-              </h2>
-              <button
-                data-carousel="important-notes"
-                data-target="prev"
-                class="tiny-slider-navigator btn px-2 border-gray-400 text-gray-700 dark:text-gray-300 mr-2"
-                @click="prevImportantNotes"
-              >
-                <ChevronLeftIcon class="w-4 h-4" />
-              </button>
-              <button
-                data-carousel="important-notes"
-                data-target="next"
-                class="tiny-slider-navigator btn px-2 border-gray-400 text-gray-700 dark:text-gray-300 mr-2"
-                @click="nextImportantNotes"
-              >
-                <ChevronRightIcon class="w-4 h-4" />
-              </button>
-            </div>
-            <div class="mt-5 intro-x">
-              <div class="box zoom-in">
-                <TinySlider ref-key="importantNotesRef">
-                  <div class="p-5">
-                    <div class="text-base font-medium truncate">
-                      Lorem Ipsum is simply dummy text
-                    </div>
-                    <div class="text-gray-500 mt-1">20 Hours ago</div>
-                    <div class="text-gray-600 text-justify mt-1">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s.
-                    </div>
-                    <div class="font-medium flex mt-5">
-                      <button type="button" class="btn btn-secondary py-1 px-2">
-                        View Notes
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto"
-                      >
-                        Dismiss
-                      </button>
-                    </div>
-                  </div>
-                  <div class="p-5">
-                    <div class="text-base font-medium truncate">
-                      Lorem Ipsum is simply dummy text
-                    </div>
-                    <div class="text-gray-500 mt-1">20 Hours ago</div>
-                    <div class="text-gray-600 text-justify mt-1">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s.
-                    </div>
-                    <div class="font-medium flex mt-5">
-                      <button type="button" class="btn btn-secondary py-1 px-2">
-                        View Notes
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto"
-                      >
-                        Dismiss
-                      </button>
-                    </div>
-                  </div>
-                  <div class="p-5">
-                    <div class="text-base font-medium truncate">
-                      Lorem Ipsum is simply dummy text
-                    </div>
-                    <div class="text-gray-500 mt-1">20 Hours ago</div>
-                    <div class="text-gray-600 text-justify mt-1">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s.
-                    </div>
-                    <div class="font-medium flex mt-5">
-                      <button type="button" class="btn btn-secondary py-1 px-2">
-                        View Notes
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto"
-                      >
-                        Dismiss
-                      </button>
-                    </div>
-                  </div>
-                </TinySlider>
-              </div>
-            </div>
-          </div>
-          <!-- END: Important Notes -->
+        </div>
+        <!-- END: Weekly Best Sellers -->
           <!-- BEGIN: Schedules -->
           <div
             class="col-span-12 md:col-span-6 xl:col-span-4 2xl:col-span-12 xl:col-start-1 xl:row-start-2 2xl:col-start-auto 2xl:row-start-auto mt-3"
@@ -1026,13 +572,14 @@
 </template>
 
 <script>
+/* eslint-disable */
 import { defineComponent, ref, provide } from 'vue'
 import ReportLineChart from '@/components/report-line-chart/Main.vue'
 import ReportDonutChart from '@/components/report-donut-chart/Main.vue'
 import ReportPieChart from '@/components/report-pie-chart/Main.vue'
 import ReportMap from '@/components/report-map/Main.vue'
-import ReportDonutChart1 from '@/components/report-donut-chart-1/Main.vue'
-import SimpleLineChart1 from '@/components/simple-line-chart-1/Main.vue'
+// import ReportDonutChart1 from '@/components/report-donut-chart-1/Main.vue'
+// import SimpleLineChart1 from '@/components/simple-line-chart-1/Main.vue'
 
 export default defineComponent({
   components: {
@@ -1040,8 +587,8 @@ export default defineComponent({
     ReportDonutChart,
     ReportPieChart,
     ReportMap,
-    ReportDonutChart1,
-    SimpleLineChart1
+    // ReportDonutChart1,
+    // SimpleLineChart1
   },
   setup() {
     const salesReportFilter = ref()

@@ -102,18 +102,6 @@
                 </button>
               </div>
             </form>
-            <div
-              class="intro-x mt-10 xl:mt-24 text-gray-700 dark:text-gray-600 text-center xl:text-left"
-            >
-              By signing up, you agree to our <br />
-              <a class="text-theme-1 dark:text-theme-10" href=""
-                >Terms and Conditions</a
-              >
-              &
-              <a class="text-theme-1 dark:text-theme-10" href=""
-                >Privacy Policy</a
-              >
-            </div>
           </div>
           <div
             class="bg-white absolute right-0 top-0 bottom-0 w-1/2 -my-20 "

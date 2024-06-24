@@ -107,7 +107,7 @@
                 id="modal-form-5"
                 type="number"
                 min="0"
-                v-model="typeInputValue.amount"
+                v-model="typeInputValue.count"
                 class="form-control"
                 :placeholder="$t('amount')"
               />
@@ -324,7 +324,7 @@
                     id="modal-form-5"
                     type="number"
                     min="0"
-                    v-model="editInputValue.amount"
+                    v-model="editInputValue.count"
                     class="form-control"
                     :placeholder="$t('amount')"
                   />
@@ -456,13 +456,13 @@
             <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
               <a
                 href=""
-                class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"
+                class="flex items-center  p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"
               >
                 <PrinterIcon class="w-4 h-4 mr-2" /> {{ $t('print') }}
               </a>
               <a
                 href=""
-                class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"
+                class="flex items-center  p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"
               >
                 <FileTextIcon class="w-4 h-4 mr-2" />
                 {{ $t('export_to_excel') }}
@@ -565,7 +565,7 @@
                   faker.initial_price
                 }}</span>
               </td>
-              <td class="text-center">{{ faker.amount }}</td>
+              <td class="text-center">{{ faker.count }}</td>
               <td class="text-center">{{ faker.barcode }}</td>
               <td class="text-center">
                 <span class="text-xs">{{ faker.expired_date }}</span>
@@ -735,7 +735,8 @@ const typeInputValue = ref({
   expired_date: '',
   manufactured_date: '',
   manufacturer: '',
-  category_id: ''
+  category_id: '',
+  count:""
 })
 console.log(typeInputValue.value.manufactured_date)
 
@@ -758,7 +759,7 @@ const editInputValue = reactive({
   barcode: null,
   price: null,
   initial_price: null,
-  amount: null,
+  count: null,
   expired_date: null,
   manufactured_date: null,
   manufacturer: null,
@@ -826,7 +827,7 @@ const addNewProducts = () => {
   console.log(typeInputValue.value)
   loading.value = true // Ishni boshlashni belgilash
   axios
-    .post('http://pharmacy.educlub.uz/api/products', typeInputValue.value, {
+    .post('https://pharmacy.educlub.uz/api/products', typeInputValue.value, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
@@ -881,7 +882,7 @@ const editProducts = () => {
         barcode: editInputValue.barcode,
         price: editInputValue.price,
         initial_price: editInputValue.initial_price,
-        amount: editInputValue.amount,
+        count: editInputValue.count,
         expired_date: editInputValue.expired_date,
         manufactured_date: editInputValue.manufactured_date,
         manufacturer: editInputValue.manufacturer,
